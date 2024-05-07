@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "grpc_protos/example";
+
+service ExampleService {
+  rpc Greeting(GreetingRequest) returns (GreetingResponse) {}
+  rpc GetNumbers(GetNumbersRequest) returns (stream Number) {}
+  rpc SendNumbers(stream Number) returns (SendNumbersResponse) {}
+  rpc Square(stream Number) returns (stream Number) {}
+}
+
+message GreetingRequest {
+  string name = 1;
+}
+
+message GreetingResponse {
+  string message = 1;
+}
+
+message GetNumbersRequest {
+  int32 count = 1;
+}
+
+message Number {
+  int32 number = 1;
+}
+
+message SendNumbersResponse {
+  bool success = 1;
+}
