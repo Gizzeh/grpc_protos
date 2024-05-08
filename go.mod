@@ -1,4 +1,4 @@
-module grpc_protos
+module github.com/Gizzeh/grpc_protos
 
 go 1.21.4
 
